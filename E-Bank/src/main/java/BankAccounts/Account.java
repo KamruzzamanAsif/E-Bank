@@ -1,6 +1,6 @@
 package BankAccounts;
 
-import Cards.Card;
+import BankCards.Card;
 import Deposit_Withdraw.DepositWithdraw_State;
 
 import java.io.Serializable;
@@ -54,7 +54,7 @@ public abstract class Account implements Serializable {
     private boolean isAccountActive() { return accountActive; }
     public final void closeAccount() { this.accountActive = false; }
     public final int getAccountNumber() { return accountNumber; }
-    public final void addCard(Card newCard){ this.cards.add(newCard);}
+    public void addCard(Card newCard){ this.cards.add(newCard);}
 
 
     public abstract String getType();

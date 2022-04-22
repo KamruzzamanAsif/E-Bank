@@ -2,27 +2,29 @@ package Deposit_Withdraw;
 
 import BankAccounts.Account;
 
-public abstract class DepositWithdraw_State {
-    private Account context;
-    public double limit_overdraw = -1000.00;
+import java.io.Serializable;
+
+public abstract class DepositWithdraw_State implements Serializable {
+    private Account account;
+    public double limit_overdraw = -500.00;
     public double balance_min = 0.00;
-    public double fee_basic = 5.75;
-    public double fee_overdraw = 8.20;
+    public double fee_basic = 5.00;
+    public double fee_overdraw = 10.00;
 
     public DepositWithdraw_State(Account account) {
-        setContext(account);
+        setAccount(account);
     }
 
     public DepositWithdraw_State(DepositWithdraw_State source) {
-        setContext(source.getContext());
+        setAccount(source.getAccount());
     }
 
-    public Account getContext() {
-        return context;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setContext(Account newAccount) {
-        context = newAccount;
+    public void setAccount(Account newAccount) {
+        account = newAccount;
     }
 
     public static DepositWithdraw_State InitialState(Account account) {

@@ -14,32 +14,32 @@ public class NoTransitionFee extends DepositWithdraw_State {
 
     @Override
     DepositWithdraw_State transitionState() {
-        double balance = getContext().getAccountBalance();
+        double balance = getAccount().getAccountBalance();
 
         if (balance <0)
-            getContext().setState(new OverDrawn(this));
+            getAccount().setState(new OverDrawn(this));
         else if (balance < this.balance_min)
-            getContext().setState(new TransFee(this));
+            getAccount().setState(new TransitionFee(this));
 
-        return getContext().getState();
+        return getAccount().getState();
     }
 
 
     @Override
     public void deposit(double amount) {
-        double balance = getContext().getAccountBalance();
+        double balance = getAccount().getAccountBalance();
 
-        getContext().setAccountBalance(balance + amount);
+        getAccount().setAccountBalance(balance + amount);
         transitionState();
     }
 
     @Override
     public void withdraw(double amount) throws Exception {
-        double balance = getContext().getAccountBalance();
+        double balance = getAccount().getAccountBalance();
 
         if ((balance - amount) <= this.limit_overdraw)
             throw new Exception("Insufficient funds");
-        getContext().setAccountBalance(balance - amount);
+        getAccount().setAccountBalance(balance - amount);
         transitionState();
     }
 }

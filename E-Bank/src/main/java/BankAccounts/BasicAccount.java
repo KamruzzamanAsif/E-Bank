@@ -1,6 +1,8 @@
 package BankAccounts;
 
-public class BasicAccount extends Account{
+import java.io.Serializable;
+
+public class BasicAccount extends Account {
 
     public BasicAccount(String ownerName) {
         super(ownerName);

@@ -7,7 +7,7 @@ public class CreateAccount {
             account = new BasicAccount(accountOwnerName);
             System.out.println("A Basic account has been created.");
         }
-        else if  (accountType.equalsIgnoreCase("Save")) {
+        else if  (accountType.equalsIgnoreCase("Saving")) {
             account = new SavingAccount(accountOwnerName);
             System.out.println("A Save account has been created.");
         }
