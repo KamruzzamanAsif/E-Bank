@@ -1,7 +1,5 @@
 package BankAccounts;
 
-import java.io.Serializable;
-
 public class BasicAccount extends Account {
 
     public BasicAccount(String ownerName) {

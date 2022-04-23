@@ -1,7 +1,7 @@
 package BankAccounts;
 
 import BankCards.Card;
-import Deposit_Withdraw.DepositWithdraw_State;
+import Money_Deposit_Withdraw.DepositWithdraw_State;
 
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -96,7 +96,7 @@ public abstract class Account implements Serializable {
         String output =
                 "[Account]\n" +
                         "Account#: " + accountNumber + "\n" +
-                        "Balance: $" + accountBalance + "\n" +
+                        "Balance: TK " + accountBalance + "\n" +
                         "Owner: " + accountOwnerName + "\n" +
                         "Account status: ";
         if(isAccountActive())

@@ -12,12 +12,12 @@
       <Button layoutX="394.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickTransferButton" prefHeight="62.0" prefWidth="141.0" text="Money Transfer" />
       <Button fx:id="withdrawMoney" layoutX="394.0" layoutY="302.0" mnemonicParsing="false" onAction="#clickWithdrawButton" prefHeight="62.0" prefWidth="141.0" text="Withdraw Money" />
       <Button fx:id="depositMoney" layoutX="394.0" layoutY="130.0" mnemonicParsing="false" onAction="#clickDepositButton" prefHeight="62.0" prefWidth="141.0" text="Deposite Money" />
-      <Button layoutX="38.0" layoutY="302.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="104.0" text="Help Center" />
+      <Button layoutX="38.0" layoutY="302.0" mnemonicParsing="false" onAction="#clickHelpButton" prefHeight="62.0" prefWidth="104.0" text="Help Center" />
       <Label layoutX="210.0" layoutY="20.0" prefHeight="17.0" prefWidth="161.0" text="User Interface">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Button layoutX="38.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickCardButton" prefHeight="62.0" prefWidth="104.0" text="Bank BankCards" />
+      <Button layoutX="38.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickCardButton" prefHeight="62.0" prefWidth="104.0" text="Bank Cards" />
    </children>
 </AnchorPane>

@@ -5,10 +5,6 @@ public class RecurringDepositAccount extends Account{
         super(ownerName);
     }
 
-    public RecurringDepositAccount(String ownerName, double balance) {
-        super(ownerName, balance);
-    }
-
     @Override
     public String getType() {
         return "Recurring Deposit";

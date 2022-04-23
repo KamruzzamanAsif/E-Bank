@@ -1,5 +1,6 @@
 package GUI;
 
+import Service.Client.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -102,5 +103,10 @@ public class UserMenu {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void clickHelpButton(ActionEvent event) throws IOException {
+        Client client = new Client();
+        client.clientRun();
     }
 }

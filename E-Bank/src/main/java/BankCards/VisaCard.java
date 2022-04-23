@@ -7,7 +7,7 @@ public class VisaCard extends Card {
 
     @Override
     public String getSpendingLimit() {
-        return "The spending limit is 2500 NS";
+        return "The spending limit is 4500 TK";
     }
 
     @Override
