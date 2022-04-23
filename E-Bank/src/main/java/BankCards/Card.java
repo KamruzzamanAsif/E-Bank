@@ -36,12 +36,12 @@ public abstract class Card implements Serializable, Date {
     @Override
     public String toString() {
         return "Card{" +
-                "owner Name='" + ownerName + '\'' +
-                ", card Number=" + cardNumber +
-                ", card Type=" + cardType +
-                ", card date=" + creationDate +
-                ", exp date=" + expiryDate +
-                ", spendingLimit=" + spendingLimit +
+                "\nowner Name='" + ownerName + '\'' +
+                ", \ncard Number=" + cardNumber +
+                ", \ncard Type=" + cardType +
+                ", \ncard date=" + creationDate +
+                ", \nexp date=" + expiryDate +
+                ", \nspendingLimit=" + spendingLimit +
                 '}';
     }
 }

@@ -1,7 +1,5 @@
 package Service.Client;
 
-import javafx.event.ActionEvent;
-
 import java.io.*;
 import java.net.Socket;
 
@@ -12,6 +10,7 @@ public class Client {
     BufferedReader br;
 
     public void clientRun() throws IOException {
+        System.out.println("Client Started.");
         try {
             socket = new Socket("localhost", 5555);
             inputStream = new DataInputStream(socket.getInputStream());
@@ -28,9 +27,12 @@ public class Client {
                 closeConnection();
             }
             outputStream.writeUTF(message);
-            System.out.println("Client writes:" + message);
-            String serverMessage = inputStream.readUTF();
-            System.out.println("Server writes:" + serverMessage);
+            if(message.equalsIgnoreCase("help"))
+                downloadFile();
+            else{
+                String serverMessage = inputStream.readUTF();
+                System.out.println("Server writes:" + serverMessage);
+            }
         }
     }
 
@@ -44,6 +46,24 @@ public class Client {
         }
     }
 
-    public void sendMessage(ActionEvent event) {
+    public void downloadFile() {
+        try {
+            int bytesRead;
+            InputStream in = socket.getInputStream();
+
+            DataInputStream clientData = new DataInputStream(in);
+
+            String fileName = clientData.readUTF();
+            OutputStream output = new FileOutputStream("src/main/java/Service/Client/userManual.txt");
+            long size = clientData.readLong();
+            byte[] buffer = new byte[1024];
+            while (size > 0 && (bytesRead = clientData.read(buffer, 0, (int) Math.min(buffer.length, size))) != -1) {
+                output.write(buffer, 0, bytesRead);
+                size -= bytesRead;
+            }
+            System.out.println("File "+fileName+" received from Server.");
+        } catch (IOException ex) {
+            System.out.println("Exception: "+ex);
+        }
     }
 }
