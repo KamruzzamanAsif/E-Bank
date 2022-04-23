@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DepositController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: green; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DepositController">
    <children>
       <Label layoutX="229.0" layoutY="32.0" text="Deposit Money">
          <font>

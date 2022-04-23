@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static BankCards.CreateCard.createCard;
 
@@ -20,10 +21,13 @@ public class BankCardController {
 
     private User user;
 
+    ArrayList<Account> accounts = new ArrayList<>();
+
     public void cardControl(User user){
         this.user = user;
         populateAccountList();
         populateCardList();
+        getAccounts();
     }
 
     @FXML
@@ -43,6 +47,10 @@ public class BankCardController {
         bankCards.getItems().addAll(account.getCards());
     }
 
+    private void getAccounts(){
+        accounts.addAll(user.getAccounts());
+    }
+
     @FXML
     private TextField cardName;
 
@@ -53,7 +61,14 @@ public class BankCardController {
         bankCards.getItems().clear();
         account.addCard(createCard(cardName.getText(), user.getUsername()));
         bankCards.getItems().addAll(account.getCards());
+        // update card info in user
+        int index = accounts.indexOf(account);
+        user.updateAccount(index,account);
         populateAccountList();
+        populateCardList();
+    }
+
+    public void clickOnShowCards(){
         populateCardList();
     }
 

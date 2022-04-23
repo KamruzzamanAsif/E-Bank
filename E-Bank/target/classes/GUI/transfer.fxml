@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="473.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TransferController">
+<AnchorPane prefHeight="473.0" prefWidth="600.0" style="-fx-border-color: green; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.TransferController">
    <children>
       <Label layoutX="222.0" layoutY="34.0" text="Transfer Money">
          <font>

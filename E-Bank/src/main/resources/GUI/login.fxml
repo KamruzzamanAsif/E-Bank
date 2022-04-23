@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Login">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: green; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Login">
    <children>
-      <Label layoutX="267.0" layoutY="53.0" text="Login">
+      <Label layoutX="267.0" layoutY="53.0" style="-fx-border-color: grey;" text="Login">
          <font>
             <Font size="24.0" />
          </font>
@@ -18,7 +18,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="149.0" layoutY="200.0" text="Password">
+      <Label layoutX="161.0" layoutY="201.0" text="Password">
          <font>
             <Font size="15.0" />
          </font>

@@ -5,19 +5,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.UserMenu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: green; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.UserMenu">
    <children>
-      <Label fx:id="userWelcomeText" layoutX="218.0" layoutY="65.0" prefHeight="23.0" prefWidth="141.0" />
-      <Button fx:id="accounts" layoutX="38.0" layoutY="130.0" mnemonicParsing="false" onAction="#clickAccountsButton" prefHeight="62.0" prefWidth="104.0" text="Accounts" />
-      <Button layoutX="394.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickTransferButton" prefHeight="62.0" prefWidth="141.0" text="Money Transfer" />
-      <Button fx:id="withdrawMoney" layoutX="394.0" layoutY="302.0" mnemonicParsing="false" onAction="#clickWithdrawButton" prefHeight="62.0" prefWidth="141.0" text="Withdraw Money" />
-      <Button fx:id="depositMoney" layoutX="394.0" layoutY="130.0" mnemonicParsing="false" onAction="#clickDepositButton" prefHeight="62.0" prefWidth="141.0" text="Deposite Money" />
-      <Button layoutX="38.0" layoutY="302.0" mnemonicParsing="false" onAction="#clickHelpButton" prefHeight="62.0" prefWidth="104.0" text="Help Center" />
-      <Label layoutX="210.0" layoutY="20.0" prefHeight="17.0" prefWidth="161.0" text="User Interface">
+      <Label fx:id="userWelcomeText" layoutX="230.0" layoutY="64.0" prefHeight="23.0" prefWidth="141.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="accounts" layoutX="38.0" layoutY="130.0" mnemonicParsing="false" onAction="#clickAccountsButton" prefHeight="62.0" prefWidth="127.0" style="-fx-border-color: blue;" text="Accounts" />
+      <Button layoutX="394.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickTransferButton" prefHeight="62.0" prefWidth="141.0" style="-fx-border-color: blue;" text="Money Transfer" />
+      <Button fx:id="withdrawMoney" layoutX="394.0" layoutY="302.0" mnemonicParsing="false" onAction="#clickWithdrawButton" prefHeight="62.0" prefWidth="141.0" style="-fx-border-color: blue;" text="Withdraw Money" />
+      <Button fx:id="depositMoney" layoutX="394.0" layoutY="130.0" mnemonicParsing="false" onAction="#clickDepositButton" prefHeight="62.0" prefWidth="141.0" style="-fx-border-color: blue;" text="Deposite Money" />
+      <Button layoutX="38.0" layoutY="302.0" mnemonicParsing="false" onAction="#clickHelpButton" prefHeight="62.0" prefWidth="127.0" style="-fx-border-color: red;" text="Help Center" />
+      <Label layoutX="210.0" layoutY="20.0" prefHeight="17.0" prefWidth="161.0" style="-fx-border-color: grey;" text="User Interface">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Button layoutX="38.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickCardButton" prefHeight="62.0" prefWidth="104.0" text="Bank Cards" />
+      <Button layoutX="38.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickCardButton" prefHeight="62.0" prefWidth="127.0" style="-fx-border-color: blue;" text="Bank Cards" />
    </children>
 </AnchorPane>

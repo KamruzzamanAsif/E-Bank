@@ -1,10 +1,7 @@
 package GUI;
 import BankAccounts.Account;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 
 public class User implements Serializable {
@@ -28,6 +25,7 @@ public class User implements Serializable {
 
     public void updateAccount(int index, Account account){
         accounts.set(index,account);
+        updateUserInformation();
     }
 
     public void addAccount(Account account) {
@@ -35,9 +33,23 @@ public class User implements Serializable {
         updateUserInformation();
     }
 
+    public void deleteAccount(Account account){
+        this.accounts.remove(account);
+        updateUserInformation();
+    }
+
     public void updateUserInformation(){
         try {
             String path = "src/main/resources/userAccounts/"+username+".txt";
+
+            // clear the file
+            FileWriter fwOb = new FileWriter(path, false);
+            PrintWriter pwOb = new PrintWriter(fwOb, false);
+            pwOb.flush();
+            pwOb.close();
+            fwOb.close();
+
+            // now update
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(path));
             out.writeObject(this);
             out.flush();

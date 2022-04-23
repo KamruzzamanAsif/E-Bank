@@ -5,14 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: Green; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainController">
    <children>
-      <Label layoutX="153.0" layoutY="99.0" text="Welcome to E-Banking">
+      <Label layoutX="153.0" layoutY="99.0" style="-fx-border-color: Grey;" text="Welcome to E-Banking">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <Button fx:id="start" layoutX="269.0" layoutY="267.0" mnemonicParsing="false" onAction="#clickOnStart" text="Start" />
+      <Button fx:id="start" layoutX="236.0" layoutY="267.0" mnemonicParsing="false" onAction="#clickOnStart" prefHeight="26.0" prefWidth="112.0" style="-fx-border-color: blue;" text="Start Banking" />
    </children>
 </AnchorPane>
