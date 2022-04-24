@@ -8,13 +8,13 @@ use the OOP concepts like Inheritance, Polymorphism, Serializaiton, Abstraction,
 programming, Multithreading, Collection Framework, Generics, etc. 
 
 # Main Features
-Account Add, Delete\n
-Bank Card additon\n
-Deposit Money\n
-Withdraw Money\n
-Transfer Money\n
-Contact with Help Center via Socket\n
+Account Add, Delete<br />
+Bank Card additon<br />
+Deposit Money<br />
+Withdraw Money<br />
+Transfer Money<br />
+Contact with Help Center via Socket
 
 # Environment
-IDE: Intelij\n
+IDE: Intelij<br />
 GUI: JavaFX (maven)
