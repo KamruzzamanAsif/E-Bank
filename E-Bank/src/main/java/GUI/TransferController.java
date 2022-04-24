@@ -2,6 +2,7 @@ package GUI;
 
 import BankAccounts.Account;
 import MoneyTransfer.Transaction;
+import javafx.animation.Transition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -53,10 +54,23 @@ public class TransferController {
             receiverLabel.setTextFill(Paint.valueOf("RED"));
             return;
         }
-        new Transaction(sender,receiver,Double.parseDouble(amount.getText()));
+        Transaction transaction = new Transaction(sender,receiver,Double.parseDouble(amount.getText()));
+        transaction.execute();
         transferSuccessful.setText("Transition Successful");
         populateListView();
+        user.transactions.add(transaction);
         user.updateUserInformation();
+    }
+
+    public void clickOnShowPreviousTransactions(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("transactionHistory.fxml"));
+        Parent root = loader.load();
+        TransactionHistoryController transactionHistoryController = loader.getController();
+        transactionHistoryController.showTransactions(this.user);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void clickOnBackButton(ActionEvent event) throws IOException, ClassNotFoundException {

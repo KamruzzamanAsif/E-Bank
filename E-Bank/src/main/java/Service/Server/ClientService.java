@@ -30,7 +30,7 @@ public class ClientService implements Runnable{
                 }
                 else{
                     // chat here
-                    System.out.println("Client writes:" + clientText);
+                    System.out.println(clientText);
                     sendMessage();
                 }
             }
@@ -45,7 +45,6 @@ public class ClientService implements Runnable{
         String message = in.readLine();
         outputStream.writeUTF(message);
         outputStream.flush();
-        //System.out.println("Server writes:" +message);
     }
 
     private void sendFile() {

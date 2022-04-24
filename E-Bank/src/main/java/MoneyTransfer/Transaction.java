@@ -2,15 +2,13 @@ package MoneyTransfer;
 
 import BankAccounts.Account;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * Make transaction between two accounts/
- */
-public class Transaction {
+public class Transaction implements Serializable {
     private static final DateFormat
             df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 
@@ -27,11 +25,16 @@ public class Transaction {
         this.sendingAccount = sendingAccount;
         this.receivingAccount = receivingAccount;
         this.amount = amount;
-        execute();
     }
 
     public boolean wasExecuted() {
         return executed;
+    }
+    public Date getDate(){
+        return date;
+    }
+    public double getAmount(){
+        return amount;
     }
 
     public void execute() throws Exception {

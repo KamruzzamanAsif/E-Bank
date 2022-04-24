@@ -1,5 +1,6 @@
 package GUI;
 import BankAccounts.Account;
+import MoneyTransfer.Transaction;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -8,6 +9,8 @@ public class User implements Serializable {
     String username;
 
     ArrayList<Account> accounts = new ArrayList<>();
+
+    ArrayList<Transaction> transactions = new ArrayList<>();
 
 
     public String getUsername() {
@@ -21,6 +24,10 @@ public class User implements Serializable {
 
     public ArrayList<Account> getAccounts() {
         return accounts;
+    }
+
+    public ArrayList<Transaction> getTransactions(){
+        return transactions;
     }
 
     public void updateAccount(int index, Account account){

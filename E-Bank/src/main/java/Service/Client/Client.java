@@ -1,5 +1,7 @@
 package Service.Client;
 
+import GUI.User;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -9,8 +11,11 @@ public class Client {
     DataOutputStream outputStream;
     BufferedReader br;
 
-    public void clientRun() throws IOException {
-        System.out.println("Client Started.");
+    String clientName;
+
+    public void clientRun(String userName) throws IOException {
+        clientName = userName;
+        System.out.println("Joined with Server.");
         try {
             socket = new Socket("localhost", 5555);
             inputStream = new DataInputStream(socket.getInputStream());
@@ -26,10 +31,12 @@ public class Client {
             if(message.equalsIgnoreCase("stop")){
                 closeConnection();
             }
-            outputStream.writeUTF(message);
-            if(message.equalsIgnoreCase("help"))
+            if(message.equalsIgnoreCase("help")){
+                outputStream.writeUTF(message);
                 downloadFile();
+            }
             else{
+                outputStream.writeUTF(clientName + " writes: " + message);
                 String serverMessage = inputStream.readUTF();
                 System.out.println("Server writes:" + serverMessage);
             }

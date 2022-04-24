@@ -107,6 +107,6 @@ public class UserMenu {
 
     public void clickHelpButton(ActionEvent event) throws IOException {
         Client client = new Client();
-        client.clientRun();
+        client.clientRun(userName);
     }
 }
