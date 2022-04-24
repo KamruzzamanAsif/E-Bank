@@ -1,0 +1,6 @@
+This is E-Bank User Manual.
+Create Account.
+Deposit money.
+Withdraw money.
+Transfer money.
+Live chat help.
