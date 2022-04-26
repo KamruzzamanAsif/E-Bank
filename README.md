@@ -17,4 +17,5 @@ Contact with Help Center via Socket
 
 # Environment
 IDE: Intelij<br />
+Language: Java <br/>
 GUI: JavaFX (maven)
